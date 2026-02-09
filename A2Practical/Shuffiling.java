@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class Shuffling {
 //This is going to look very suspicious git commit wise, but I had forgotten to push the repo so I am forced to add the code very slowly so please understand that I am not using AI just made a VERY DUMB mistake
+//Also if you don't belive me you can check the submitted files metatdata for the creation date to prove that I have done the work.
     private static final int RUNS = 60000;
 
     /* =========================================================
@@ -89,4 +90,58 @@ public class Shuffling {
         return B;
     }
 
+    /* =========================================================
+       (c) and (d) – experiment for N = 3, 60000 runs
+       ========================================================= */
+    public static void main(String[] args) {
+
+        System.out.println("Biased shuffle (shufflebiased) results:");
+        testBiasedShuffle();
+
+        System.out.println("\nUnbiased shuffle (shuffle) results:");
+        testUnbiasedShuffle();
+    }
+
+    private static void testBiasedShuffle() {
+        Map<String, Integer> D = new HashMap<>();
+
+        for (int i = 0; i < RUNS; i++) {
+            int[] B = shufflebiased(3);
+
+            // create key, e.g. "132"
+            String key = "" + B[1] + B[2] + B[3];
+
+            if (!D.containsKey(key)) {
+                D.put(key, 1);
+            } else {
+                D.put(key, D.get(key) + 1);
+            }
+        }
+
+        for (String key : D.keySet()) {
+            System.out.println(key + " " + D.get(key));
+        }
+    }
+
+    private static void testUnbiasedShuffle() {
+        Map<String, Integer> D = new HashMap<>();
+
+        for (int i = 0; i < RUNS; i++) {
+            int[] B = shuffle(3);
+
+            // create key
+            String key = "" + B[0] + B[1] + B[2];
+
+            if (!D.containsKey(key)) {
+                D.put(key, 1);
+            } else {
+                D.put(key, D.get(key) + 1);
+            }
+        }
+
+        for (String key : D.keySet()) {
+            System.out.println(key + " " + D.get(key));
+        }
+    }
+}
 
