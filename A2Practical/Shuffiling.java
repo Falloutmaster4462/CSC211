@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Shuffling {
-
+//This is going to look very suspicious git commit wise, but I had forgotten to push the repo so I am forced to add the code very slowly so please understand that I am not using AI just made a VERY DUMB mistake
     private static final int RUNS = 60000;
 
     /* =========================================================
@@ -66,6 +66,27 @@ public class Shuffling {
 
         return shuffled;
     }
+/* =========================================================
+       (b) unbiased shuffle – jar / Fisher–Yates method (Second method mentioned in qu b)
+       ========================================================= */
+    public static int[] shuffle(int N) {
+        int[] B = new int[N];
+        Random rand = new Random();
 
+        // B = [1, 2, ..., N]
+        for (int i = 0; i < N; i++) {
+            B[i] = i + 1;
+        }
+
+        // extract balls one by one
+        for (int b = 0; b < N; b++) {
+            int r = rand.nextInt(N - b) + b; // [b..N-1]
+            int temp = B[b];
+            B[b] = B[r];
+            B[r] = temp;
+        }
+
+        return B;
+    }
 
 
