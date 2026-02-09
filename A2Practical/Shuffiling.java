@@ -44,3 +44,28 @@ public class Shuffling {
 
         return shuffled;
     }
+/* =========================================================
+       (b) shufflebiased – efficient but biased (First method on qu b)
+       ========================================================= */
+    public static int[] shufflebiased(int N) {
+        int[] shuffled = new int[N + 1]; // indices 1..N
+        Random rand = new Random();
+
+        // initialise shuffled[i] = i
+        for (int i = 1; i <= N; i++) {
+            shuffled[i] = i;
+        }
+
+        // exactly N swaps (biased)
+        for (int i = 1; i <= N; i++) {
+            int r = rand.nextInt(N) + 1; // [1..N]
+            int temp = shuffled[i];
+            shuffled[i] = shuffled[r];
+            shuffled[r] = temp;
+        }
+
+        return shuffled;
+    }
+
+
+
