@@ -63,7 +63,7 @@ public static int mcsOn2B(int[] x){
    int[] sumTo = new int[n + 1];
 
    for (int i = 1; i <= n; i++) {
-       sumTo[i] = sumTo[i - 1] + x[i - 1];
+       sumTo[i] = sumTo[i - 1] + x[i];
    }
 
    int maxsofar = 0;
@@ -108,3 +108,6 @@ public static int[] generateArray(int n ){
     }
     return x;
 }
+
+// Main func to test!:
+
