@@ -118,4 +118,24 @@ public static void main(String[] args) {
             "n", "O(n^3)", "O(n^2)A", "O(n^2)B", "O(n)");
 
     for (int n : testSizes) {
+        int[] X = generateArray(n);
+
+        countOn3 = countOn2A = countOn2B = countOn = 0;
+
+        if (n <= 2000)  // prevent extreme runtime
+            mcsOn3(X);
+
+        if (n <= 50000) {
+            mcsOn2A(X);
+            mcsOn2B(X);
+        }
+
+        mcsOn(X);
+
+        System.out.printf("%-10d %-15d %-15d %-15d %-15d\n",
+                n, countOn3, countOn2A, countOn2B, countOn);
+    }
+}
+}
+        }
 
