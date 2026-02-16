@@ -3,6 +3,8 @@
 //MCS Prac 16/02/2026
 
 
+public class MCS {
+
 // Importing clases
 import java.util.Random;
 
