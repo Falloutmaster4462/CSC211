@@ -25,7 +25,7 @@ public static int mcsOn3(int[] x){
              int sum =0;
              for ( int r  = low; r <= high; r++ ) {
                  sum += x[r];
-                 //Inc global count
+                 //Inc global counter
                  countOn3++;
              }
              if (sum > maxsofar) {
@@ -43,5 +43,14 @@ public static int mcsOn2A(int[] x){
     int n = x.length;
     int maxsofar = 0;
 
-
+    for (int low = 0; low < n; low++) {
+        int sum =0;
+        for (int r  = low; r < n; r++)
+            sum += x[r];
+            countOn2A++; //Inc global counter
+        if (sum > maxsofar) {
+            maxsofar = sum;
+        }
+    }
+    return maxsofar;
 }
