@@ -16,6 +16,7 @@ static long countOn = 0;
 // Implementation for O(n^3):
 
 public static int mcsOn3(int[] x){
+    //Copy paste the below 2 lines for later
     int n = x.length;
     int maxsofar = 0;
 
@@ -24,6 +25,7 @@ public static int mcsOn3(int[] x){
              int sum =0;
              for ( int r  = low; r <= high; r++ ) {
                  sum += x[r];
+                 //Inc global count
                  countOn3++;
              }
              if (sum > maxsofar) {
@@ -32,4 +34,14 @@ public static int mcsOn3(int[] x){
         }
     }
     return maxsofar;
+}
+
+// Implementation of O(n^2) VERSION A:
+
+public static int mcsOn2A(int[] x){
+    //pasted the below 2 lines from the first func.
+    int n = x.length;
+    int maxsofar = 0;
+
+
 }
