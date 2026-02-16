@@ -88,5 +88,12 @@ public static int mcsOn(int[] x){
     int maxSoFar = 0;
     int maxToHere = 0;
 
+    for ( int i = 0; i < x.length; i++ ) {
+        maxToHere = Math.max(maxToHere +  x[i], 0);
+        //Inc global counter!
+        countOn++;
+        maxSoFar = Math.max(maxSoFar, maxToHere);
 
+    }
+    return maxSoFar;
 }
