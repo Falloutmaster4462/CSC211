@@ -45,7 +45,7 @@ public static int mcsOn2A(int[] x){
 
     for (int low = 0; low < n; low++) {
         int sum =0;
-        for (int r  = low; r < n; r++)
+        for (int r  = low; r < n; r++){
             sum += x[r];
             countOn2A++; //Inc global counter
         if (sum > maxsofar) {
@@ -76,9 +76,9 @@ public static int mcsOn2B(int[] x){
                maxsofar = sum;
 
        }
-       return maxsofar;
-   }
 
+   }
+        return maxsofar;
 }
 
 // Implementation of O(n) :
@@ -122,7 +122,7 @@ public static void main(String[] args) {
 
         countOn3 = countOn2A = countOn2B = countOn = 0;
 
-        if (n <= 2000)  // prevent extreme runtime
+        if (n <= 2000)  // prevent extreme runtime so I do not crash my system
             mcsOn3(X);
 
         if (n <= 50000) {
@@ -131,7 +131,7 @@ public static void main(String[] args) {
         }
 
         mcsOn(X);
-
+       //tbl and coloumn creation
         System.out.printf("%-10d %-15d %-15d %-15d %-15d\n",
                 n, countOn3, countOn2A, countOn2B, countOn);
     }
