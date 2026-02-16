@@ -3,11 +3,12 @@
 //MCS Prac 16/02/2026
 
 
-public class MCS {
+
 
 // Importing clases
 import java.util.Random;
-
+public class MCS {
+    
 //Counters and their initalisation
 static long countOn3 = 0;
 static long countOn2A = 0;
@@ -53,6 +54,7 @@ public static int mcsOn2A(int[] x){
         if (sum > maxsofar) {
             maxsofar = sum;
         }
+    }
     }
     return maxsofar;
 }
@@ -139,5 +141,5 @@ public static void main(String[] args) {
     }
 }
 }
-        }
+        
 
