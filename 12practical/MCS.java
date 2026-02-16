@@ -62,10 +62,23 @@ public static int mcsOn2B(int[] x){
     int n = x.length;
    int[] sumTo = new int[n + 1];
 
-   for (int i = 1; i <= n; i++)
+   for (int i = 1; i <= n; i++) {
        sumTo[i] = sumTo[i - 1] + x[i - 1];
+   }
 
    int maxsofar = 0;
+   for(int low = 0; low < n; low ++){
+       for (int high = low; high < n; high ++){
+           int sum = sumTo[high + 1 ] - sumTo[low];
+           //Inc global counter!
+           countOn2B++;
+           if (sum > maxsofar) {
+               maxsofar = sum;
+           }
+       }
+       return maxsofar;
+   }
+
 
 
 
