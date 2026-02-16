@@ -97,3 +97,14 @@ public static int mcsOn(int[] x){
     }
     return maxSoFar;
 }
+
+// Generating array for output
+
+public static int[] generateArray(int n ){
+    Random rand = new Random();
+    int[] x = new int[n];
+    for (int i = 0; i < n; i++) {
+        x[i] = rand.nextInt(20) - 10;
+    }
+    return x;
+}
