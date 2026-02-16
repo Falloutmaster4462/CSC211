@@ -72,16 +72,21 @@ public static int mcsOn2B(int[] x){
            int sum = sumTo[high + 1 ] - sumTo[low];
            //Inc global counter!
            countOn2B++;
-           if (sum > maxsofar) {
+           if (sum > maxsofar)
                maxsofar = sum;
-           }
+
        }
        return maxsofar;
    }
 
+}
+
+// Implementation of O(n) :
+
+public static int mcsOn(int[] x){
+
+    int maxSoFar = 0;
+    int maxToHere = 0;
 
 
-
-
-
-        }
+}
