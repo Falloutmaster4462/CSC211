@@ -63,7 +63,7 @@ public static int mcsOn2B(int[] x){
    int[] sumTo = new int[n + 1];
 
    for (int i = 1; i <= n; i++) {
-       sumTo[i] = sumTo[i - 1] + x[i];
+       sumTo[i] = sumTo[i - 1] + x[i - 1];
    }
 
    int maxsofar = 0;
@@ -110,4 +110,12 @@ public static int[] generateArray(int n ){
 }
 
 // Main func to test!:
+public static void main(String[] args) {
+
+    int[] testSizes = {100, 1000, 10000, 100000, 1000000};
+
+    System.out.printf("%-10s %-15s %-15s %-15s %-15s\n",
+            "n", "O(n^3)", "O(n^2)A", "O(n^2)B", "O(n)");
+
+    for (int n : testSizes) {
 
