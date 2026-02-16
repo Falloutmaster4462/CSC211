@@ -54,3 +54,21 @@ public static int mcsOn2A(int[] x){
     }
     return maxsofar;
 }
+
+
+// Implementation of O(n^2) VERSION B (Prefix sums):
+public static int mcsOn2B(int[] x){
+
+    int n = x.length;
+   int[] sumTo = new int[n + 1];
+
+   for (int i = 1; i <= n; i++)
+       sumTo[i] = sumTo[i - 1] + x[i - 1];
+
+   int maxsofar = 0;
+
+
+
+
+
+        }
