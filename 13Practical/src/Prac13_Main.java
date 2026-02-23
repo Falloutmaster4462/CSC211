@@ -79,6 +79,23 @@ public class Prac13_Main {
        double binaryTime =0, binaryTime2 =0;
 
 
+        //Linear Search Timer:
+
+        for (int i = 0; i < repetitions; i++) {
+            int key = 1 +  rand.nextInt(32654);
+
+            long Start =  System.nanoTime();
+            linearSearch(array, key);
+            long Finish = System.nanoTime();
+
+            double time = (Finish - Start)/ 1_000_000.0;
+
+            linearTime += time;
+            linearTime2 += time*time;
+        }
+
+
+
 
 
 
