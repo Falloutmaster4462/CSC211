@@ -29,6 +29,27 @@ public class Prac13_Main {
         return null;
     }
 
+    //Binary Search:
+
+    static Node binarySearch(Node[] arr, int key){
+
+        int low = 0;
+        int high = arr.length - 1;
+
+        while (low <= high){
+            int mid = (high + low)/2;
+
+            if (arr[mid].key == key)
+                return arr[mid];
+
+            if (arr[mid].key < key)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return null;
+    }
+
     public static void main(String[] args) throws Exception {
         //Load file for reading and computation
        BufferedReader br = new BufferedReader(new FileReader("ulysses.numbered"));
