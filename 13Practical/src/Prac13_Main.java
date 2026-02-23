@@ -25,6 +25,7 @@ public class Prac13_Main {
        ArrayList<Node> list = new ArrayList<>();
 
        String line;
+       //Data parsing logic
        while ((line = br.readLine()) != null) {
            String[] parts = line.split("\\s+",2);
            int key = Integer.parseInt(parts[0]);
@@ -32,7 +33,27 @@ public class Prac13_Main {
            list.add(new Node(key, data));
 
        }
+       // Closed file after reading.
        br.close();
+
+       array = list.toArray(new Node[0]);
+       N = array.length;
+
+       //Repetition and random logic
+       int repetitions = 30;
+       Random rand = new Random();
+
+       //Created timers
+       double linearTime = 0, linearTime2 = 0;
+       double binaryTime =0, binaryTime2 =0;
+
+
+       //Linear Search:
+
+
+
+
+
     }
 
 }
