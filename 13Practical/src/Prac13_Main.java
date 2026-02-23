@@ -22,6 +22,17 @@ public class Prac13_Main {
     public static void main(String[] args) throws Exception {
         //Load file for reading and computation
        BufferedReader br = new BufferedReader(new FileReader("ulysses.numbered"));
+       ArrayList<Node> list = new ArrayList<>();
+
+       String line;
+       while ((line = br.readLine()) != null) {
+           String[] parts = line.split("\\s+",2);
+           int key = Integer.parseInt(parts[0]);
+           String data = parts.length > 1 ? parts[1] : "";
+           list.add(new Node(key, data));
+
+       }
+       br.close();
     }
 
 }
