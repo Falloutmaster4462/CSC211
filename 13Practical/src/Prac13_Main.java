@@ -94,6 +94,22 @@ public class Prac13_Main {
             linearTime2 += time*time;
         }
 
+        double linearAverage = linearTime / repetitions;
+        double linearStd = Math.sqrt((linearTime2 - repetitions * linearAverage * linearAverage)/(repetitions - 1 ));
+
+        //Binary Search Timer:
+
+        for (int i = 0; i < repetitions; i++) {
+            int key = 1 +  rand.nextInt(32654);
+            long Start =  System.nanoTime();
+            binarySearch(array, key);
+            long finish = System.nanoTime();
+            double time = (finish - Start)/ 1_000_000.0;
+
+            binaryTime2 += time*time;
+            binaryTime += time;
+        }
+
 
 
 
