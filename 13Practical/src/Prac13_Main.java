@@ -19,6 +19,16 @@ public class Prac13_Main {
     static Node[] array;
     static int N = 0;
 
+    //Linear Search:
+
+    static Node linearSearch(Node[] arr, int key){
+        for (int i = 0; i < N; i++) {
+            if (arr[i].key == key)
+                return arr[i];
+        }
+        return null;
+    }
+
     public static void main(String[] args) throws Exception {
         //Load file for reading and computation
        BufferedReader br = new BufferedReader(new FileReader("ulysses.numbered"));
@@ -47,8 +57,6 @@ public class Prac13_Main {
        double linearTime = 0, linearTime2 = 0;
        double binaryTime =0, binaryTime2 =0;
 
-
-       //Linear Search:
 
 
 
