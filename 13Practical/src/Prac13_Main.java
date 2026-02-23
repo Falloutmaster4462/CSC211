@@ -16,6 +16,12 @@ public class Prac13_Main {
 
         }
     }
-    S
+    static Node[] array;
+    static int N = 0;
+
+    public static void main(String[] args) throws Exception {
+        //Load file for reading and computation
+       BufferedReader br = new BufferedReader(new FileReader("ulysses.numbered"));
+    }
 
 }
