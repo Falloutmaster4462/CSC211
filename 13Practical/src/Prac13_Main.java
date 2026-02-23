@@ -109,6 +109,12 @@ public class Prac13_Main {
             binaryTime2 += time*time;
             binaryTime += time;
         }
+        double binaryAverage  = binaryTime / repetitions;
+        double binaryStd = Math.sqrt(( binaryTime2 - repetitions * binaryAverage * binaryAverage)/(repetitions - 1 ));
+
+        DecimalFormat df = new DecimalFormat("0.0000");
+
+
 
 
 
