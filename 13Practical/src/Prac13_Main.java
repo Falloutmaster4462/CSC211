@@ -114,6 +114,14 @@ public class Prac13_Main {
 
         DecimalFormat df = new DecimalFormat("0.0000");
 
+        // Final Output:
+
+        System.out.println("Linear Search Average (ms): " +  df.format(linearAverage));
+        System.out.println("Linear Search Standard (ms): " +  df.format(linearStd));
+        System.out.println("Binary Search Average (ms): " +  df.format(binaryAverage));
+        System.out.println("Binary Search Standard (ms): " +  df.format(binaryStd));
+
+
 
 
 

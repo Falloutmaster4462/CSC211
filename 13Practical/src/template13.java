@@ -1,7 +1,9 @@
 public class template13 {
 
     // Code is stored as 13template.java
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+/*import java.lang.Math.*;   import java.io.*;   import java.text.*;
+
+
 
 
     //Time methods
@@ -53,13 +55,14 @@ import java.lang.Math.*;   import java.io.*;   import java.text.*;
             System.out.println();
             System.out.println(); }	}
 
-   /* static void oneofyourMethods(int n,
+   static void oneofyourMethods(int n,
                                  yourMethodParameter1,
                                  yourMethodParameter2, . . . ) {
 // The declarations and body of your method / s
 // The final statement of this code.} }
 
+*/
+}
 
-    */
 
 
