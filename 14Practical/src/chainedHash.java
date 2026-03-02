@@ -3,10 +3,12 @@ public class chainedHash {
     private static  class Node{
         String key;
         String value;
+        Node next;
 
         Node(String k, String v ){
             key = key;
             value = value;
+
         }
     }
 
@@ -31,5 +33,20 @@ public class chainedHash {
             table[i] = new Node(key, value);
             return;
         }
+        Node current = head;
+        Node prev = null;
+
+        while (current != null){
+
+            if (current.key.equals(key)){
+                current.value = value;
+                return;
+            }
+            prev = current;
+            current = current.next;
+        }
+        prev.next = new Node(key, value);
     }
+
+
 }
