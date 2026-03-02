@@ -45,4 +45,18 @@ private Node[] table;
             table[i].value=Value;
         }
     }
+
+    public String lookup(String Key){
+        int i = hash(Key);
+        int start = i;
+
+        while (table[i] != null){
+            if (table[i].key.equals(Key))
+                return table[i].value;
+
+            i = (i % m) + 1;
+            if (i == start) break;
+
+        }
+    }
 }
