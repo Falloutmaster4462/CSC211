@@ -11,5 +11,14 @@ public class openHash {
             }
     }
 
+private Node[] table;
+    private int size = 0;
+    private int m;
+
+    public openHash(int m){
+        this.m = m;
+        //Indices 1...m
+        table = new Node[m + 1];
+    }
 
 }
