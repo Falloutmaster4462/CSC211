@@ -27,7 +27,7 @@ private Node[] table;
     }
 
     public void insert(String Key, String Value){
-       // if (isFull(()) return;
+        if (isFull()) return;
         int i = hash(Key);
         int start = i;
 
