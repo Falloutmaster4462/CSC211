@@ -27,12 +27,22 @@ private Node[] table;
     }
 
     public void insert(String Key, String Value){
-
+       // if (isFull(()) return;
         int i = hash(Key);
         int start = i;
 
         while (table[i] != null && !table[i].key.equals(Key)){
+            //Linear probing
             i = (i % m) + 1;
+            if (i == start)
+                return;
+        }
+
+        if (table[i] == null){
+            table[i] = new Node(Key, Value);
+            size++;
+        }else{
+            table[i].value=Value;
         }
     }
 }
