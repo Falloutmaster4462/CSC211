@@ -63,6 +63,21 @@ public class Hash {
         return (totalTime / 1000.0)/ REPETITIONS;
     }
 
+    static double runChainedHash(int entries, int m) {
+        long totalTime = 0;
+
+        for (int r = 0; r < REPETITIONS; r++) {
+            chainedHash table = new chainedHash(m);
+            for (int i = 0; i < entries; i++ )
+                table.insert(data[i].key, data[i].value);
+            long start = System.currentTimeMillis();
+            for (int i = 0; i < entries; i++)
+                table.lookup(data[i].key);
+            long end = System.currentTimeMillis();
+            totalTime += (end - start);
+        }
+        return (totalTime / 1000.0)/ REPETITIONS;
+    }
 
     //Gimme code - Reference to lecture
     static Pair[] data = new Pair[N];
