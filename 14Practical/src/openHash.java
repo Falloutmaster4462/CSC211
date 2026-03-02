@@ -58,5 +58,25 @@ private Node[] table;
             if (i == start) break;
 
         }
+        return null;
     }
+
+    public String remove(String Key) {
+        int i = hash(Key);
+        int start = i;
+        while (table[i] != null) {
+            if (table[i].key.equals(Key)) {
+                String val = table[i].value;
+                table[i] = null;
+                size--;
+                return val;
+            }
+            i = (i % m) + 1;
+            if (i == start) break;
+
+        }
+        return null;
+    }
+
+
 }
