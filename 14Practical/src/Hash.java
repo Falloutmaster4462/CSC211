@@ -16,7 +16,23 @@ public class Hash {
         }
     }
 
+    static void generateData(){
+
+        //Generate keys from 1 to N
+        String[] keys =  new String[N];
+
+        for (int i = 0; i < N; i++)
+            keys[i] = Integer.toString(i + 1);
+
+        //Shuffle Time:
+        List<String> list = Arrays.asList(keys);
+        Collections.shuffle(list);
+    }
+    //Gimme code - Reference to lecture
+    static Pair[] data = new Pair[N];
+
     public static void main(String[] args) {
+
 
 
     }
