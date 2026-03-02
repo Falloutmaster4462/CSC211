@@ -6,8 +6,8 @@ public class chainedHash {
         Node next;
 
         Node(String k, String v) {
-            key = key;
-            value = value;
+            this.key= k;
+            this.value = v;
 
         }
     }

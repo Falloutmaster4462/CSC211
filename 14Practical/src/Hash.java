@@ -93,7 +93,7 @@ double[] alphas = {0.75, 0.80, 0.85, 0.90, 0.95};
 
         for (double alpha : alphas) {
 
-            int entries = (int)(alpha * MAX_USED);
+            int entries  = MAX_USED;
             int m = (int)(entries / alpha); // m = N/alpha
 
             double openTime = runOpenHash(entries, m);
