@@ -47,6 +47,17 @@ public class chainedHash {
         }
         prev.next = new Node(key, value);
     }
+public String lookup(String key){
+    int i = hash(key);
+   Node current = table[i];
 
+    while (current != null){
+        if (current.key.equals(key)){
+            return current.value;
+        }
+    current = current.next;
+    }
+    return null;
+}
 
 }
