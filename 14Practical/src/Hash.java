@@ -6,7 +6,18 @@ public class Hash {
     static  final int MAX_USED = 950_000;
     static  final int REPETITIONS = 30;
 
+    static class Pair{
+        String key;
+        String value;
+
+        Pair(String k, String v){
+            key = k;
+            value = v;
+        }
+    }
+
     public static void main(String[] args) {
+
 
     }
 }
