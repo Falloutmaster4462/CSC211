@@ -83,7 +83,15 @@ public class Hash {
     static Pair[] data = new Pair[N];
 
     public static void main(String[] args) {
+generateData();
 
+double[] alphas = {0.75, 0.80, 0.85, 0.90, 0.95};
+        System.out.println("Average time in seconds");
+        System.out.println("------------------------------------------------------");
+        System.out.println("Alpha\t\tOpenHash\tChainedHash");
+
+
+        for double openTime = runOpenHash(entries, m);
 
 
     }
