@@ -77,6 +77,14 @@ private Node[] table;
         }
         return null;
     }
-
+    public boolean isFull(){
+        return size == m;
+    }
+    public boolean isEmpty(){
+        return size == 0;
+    }
+    public boolean isInTable(String Key){
+        return lookup(Key) != null;
+    }
 
 }
