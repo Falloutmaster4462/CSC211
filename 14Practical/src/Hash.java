@@ -27,6 +27,14 @@ public class Hash {
         //Shuffle Time:
         List<String> list = Arrays.asList(keys);
         Collections.shuffle(list);
+
+        // Assign shuffle keys and values
+
+        for (int i =0; i < N; i++){
+            data[i] = new Pair(keys[i], Integer.toString(i));
+
+
+        }
     }
     //Gimme code - Reference to lecture
     static Pair[] data = new Pair[N];
