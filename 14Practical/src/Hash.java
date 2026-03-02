@@ -91,7 +91,17 @@ double[] alphas = {0.75, 0.80, 0.85, 0.90, 0.95};
         System.out.println("Alpha\t\tOpenHash\tChainedHash");
 
 
-        for double openTime = runOpenHash(entries, m);
+        for (double alpha : alphas) {
+
+            int entries = (int)(alpha * MAX_USED);
+            int m = (int)(entries / alpha); // m = N/alpha
+
+            double openTime = runOpenHash(entries, m);
+            double chainTime = runChainedHash(entries, m);
+
+            System.out.printf("%.0f%%\t\t%.6f\t%.6f\n",
+                    alpha * 100, openTime, chainTime);
+        }
 
 
     }

@@ -6,8 +6,8 @@ public class openHash {
             String value;
 
             Node(String k, String v ){
-                key = key;
-                value = value;
+                this.key = k;
+                this.value = v;
             }
     }
 
