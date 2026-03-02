@@ -21,4 +21,18 @@ private Node[] table;
         table = new Node[m + 1];
     }
 
+    private int hash(String key){
+        int h = Math.abs(key.hashCode());
+        return (h % m) + 1;
+    }
+
+    public void insert(String Key, String Value){
+
+        int i = hash(Key);
+        int start = i;
+
+        while (table[i] != null && !table[i].key.equals(Key)){
+            i = (i % m) + 1;
+        }
+    }
 }
