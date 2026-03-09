@@ -29,9 +29,22 @@ while ((line = reader.readLine()) != null){
         String key =  new String(chars);
 
         //Insert into dictionary
+        if (!D.containsKey(key)){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(word);
+            D.put(key, list);
+        }else {
+            D.get(key).add(word);
+        }
     }
 }
+reader.close();
+}catch (IOException e){
+System.out.println("Error reading file");
+e.printStackTrace();
+
 }
+
 
     }
 }
