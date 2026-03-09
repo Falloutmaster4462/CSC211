@@ -45,6 +45,26 @@ e.printStackTrace();
 
 }
 
+//Print anagrams (Lists with more than 1 word)
+        for (String key : D.keySet()) {
+
+            ArrayList<String> list = D.get(key);
+
+            if (list.size() > 1) {
+                System.out.println(key + " : " + list);
+            }
+        }
+
+
+        // Write Latex File
+        try{
+            PrintWriter writer = new PrintWriter("theAnagrams.tex");
+            writer.println("\\_begin verbatim");
+
+            writer.println("\\_end verbatim");
+        }catch(FileNotFoundException e){
+            System.out.println("Error opening file");
+        }
 
     }
 }
