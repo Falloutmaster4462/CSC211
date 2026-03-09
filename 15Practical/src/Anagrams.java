@@ -3,7 +3,7 @@ import java.util.*;
 public class Anagrams {
     public static void main(String[] args) {
 
-HashMap<String, ArrayList<String>> D = new HashMap<>();
+HashMap<String, HashSet<String>> D = new HashMap<>();
 
 try{
 
@@ -30,16 +30,13 @@ while ((line = reader.readLine()) != null){
         String key =  new String(chars);
 
         //Insert into dictionary
-        if (!D.containsKey(key)){
-            ArrayList<String> list = new ArrayList<>();
-            list.add(word);
-            D.put(key, list);
-        }else {
-            D.get(key).add(word);
+        D.putIfAbsent(key, new HashSet<>());
+        D.get(key).add(word);
         }
     }
-}
-reader.close();
+    reader.close();
+
+
 }catch (IOException e){
 System.out.println("Error reading file");
 e.printStackTrace();
@@ -49,7 +46,7 @@ e.printStackTrace();
 //Print anagrams (Lists with more than 1 word)
         for (String key : D.keySet()) {
 
-            ArrayList<String> list = D.get(key);
+            HashSet<String> list = D.get(key);
 
             if (list.size() > 1) {
                 System.out.println(key + " : " + list);
@@ -65,7 +62,7 @@ e.printStackTrace();
 
 
             for (String key : D.keySet()) {
-                ArrayList<String> list = D.get(key);
+                HashSet<String> list = D.get(key);
                 if (list.size() > 1) {
                     writer.println(key + " : " + list);
 
