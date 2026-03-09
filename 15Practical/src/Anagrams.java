@@ -6,6 +6,7 @@ public class Anagrams {
 HashMap<String, ArrayList<String>> D = new HashMap<>();
 
 try{
+
 BufferedReader reader = new BufferedReader(new FileReader("joyce1922_ulysses.text"));
 String line;
 
@@ -16,7 +17,7 @@ while ((line = reader.readLine()) != null){
     for (String word : words){
 
         //clean word (Leave apostrophes)
-        word = word.replaceAll("[...,;:_!\\-]+", "");
+        word = word.replaceAll("[^a-zA-Z']", "");
         word = word.toLowerCase();
 
         if (word.length() == 0){
