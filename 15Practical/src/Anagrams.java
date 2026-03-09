@@ -59,11 +59,21 @@ e.printStackTrace();
         // Write Latex File
         try{
             PrintWriter writer = new PrintWriter("theAnagrams.tex");
-            writer.println("\\_begin verbatim");
+            writer.println("\\begin{verbatim}");
 
-            writer.println("\\_end verbatim");
-        }catch(FileNotFoundException e){
-            System.out.println("Error opening file");
+
+
+            for (String key : D.keySet()) {
+                ArrayList<String> list = D.get(key);
+                if (list.size() > 1) {
+                    writer.println(key + " : " + list);
+
+                }
+            }
+            writer.println("\\end{verbatim}");
+            writer.close();
+        }catch(Exception e){
+            System.out.println("Error writing to the latex file");
         }
 
     }
