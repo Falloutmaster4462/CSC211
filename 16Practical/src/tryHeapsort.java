@@ -20,8 +20,8 @@ public class tryHeapsort {
 
     private static void heapify(String[] arr, int i, int n) {
                 int smallest = i;
-                int left = 2*i;
-                int right = 2*i + 1;
+                int left = 2*i + 1;
+                int right = 2*i + 2;
 
 
                 if (left < n && arr[left].compareTo(arr[smallest]) < 0)
@@ -54,15 +54,13 @@ public class tryHeapsort {
     private static void insert(String[] heap, int size) {
         int i = size - 1;
         while ( i > 0){
-
-            while (i > 0) {
                 int parent = (i - 1)/2;
                 if (heap[i].compareTo(heap[parent]) >= 0) break;
                 swap(heap, i, parent);
                 i = parent;
             }
         }
-        }
+
     // Build heap top-down
     public static void buildHeapTopDown(String[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -101,4 +99,49 @@ public class tryHeapsort {
         }
         return wordsList.toArray(new String[0]);
     }
-}
+
+
+    // Main testing
+        public static void main(String[] args) {
+            String filename = "theAnagrams.tex";
+
+            // Load all words from file
+            String[] words = readWordsFromFile(filename);
+            System.out.println("Total words loaded: " + words.length);
+
+            // ------------------------
+            // Bottom-Up Heap
+            // ------------------------
+            String[] bottomUpArr = Arrays.copyOf(words, words.length);
+            long start = System.nanoTime();
+            buildHeapBottomUp(bottomUpArr);
+            heapSort(bottomUpArr);
+            long end = System.nanoTime();
+
+            System.out.println("\nBottom-Up Sorting completed.");
+            System.out.println("Bottom-Up Timing: " + (end - start)/1e6 + " ms");
+
+            // ------------------------
+            // Top-Down Heap
+            // ------------------------
+            String[] topDownArr = Arrays.copyOf(words, words.length);
+            start = System.nanoTime();
+            buildHeapTopDown(topDownArr);
+            heapSort(topDownArr);
+            end = System.nanoTime();
+
+            System.out.println("\nTop-Down Sorting completed.");
+            System.out.println("Top-Down Timing: " + (end - start)/1e6 + " ms");
+
+            // ------------------------
+            // Optional: Preview first 50 words
+            // ------------------------
+            System.out.println("\nPreview of sorted words (first 50):");
+            int preview = Math.min(50, bottomUpArr.length);
+            for (int i = 0; i < preview; i++) {
+                System.out.print(bottomUpArr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
