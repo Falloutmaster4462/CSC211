@@ -30,7 +30,12 @@ public class tryHeapsort {
     }
 
     //Build heap bottom up
-    public static void insert(String[] heap, int size) {
+    public static void buildHeapBottomUp(String[] arr) {
+                int n = arr.length;
+                //Start from last parent node
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(arr, n, i);
+        }
 
     }
 }
