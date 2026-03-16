@@ -63,4 +63,17 @@ public class tryHeapsort {
             insert(arr, i + 1); // insert arr[i] into heap of size i
         }
     }
+    // HEAP SORT (SHARED)
+    public static void heapSort(String[] arr) {
+        int n = arr.length;
+        // Build max-heap to sort ascending
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
+
+        // Extract elements one by one
+        for (int i = n - 1; i >= 0; i--) {
+            swap(arr, 0, i);
+            heapify(arr, i, 0);
+        }
     }
+}
