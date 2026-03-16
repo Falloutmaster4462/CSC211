@@ -1,4 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 public class tryHeapsort {
 
         // Swap Utility
@@ -25,7 +31,7 @@ public class tryHeapsort {
 
                 if (smallest != i) {
                     swap(arr, i, smallest);
-                    heapify(arr, smallest, j);
+                    heapify(arr, smallest, n);
                 }
     }
 
@@ -34,7 +40,7 @@ public class tryHeapsort {
                 int n = arr.length;
                 //Start from last parent node
         for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(arr, n, i);
+            heapify(arr, i, n);  // FIX: swapped args were (arr, n, i)
         }
 
 
@@ -48,9 +54,9 @@ public class tryHeapsort {
     private static void insert(String[] heap, int size) {
         int i = size - 1;
         while ( i > 0){
-            int parent = (i - 1)/2;
+
             while (i > 0) {
-                int parent = (i - 1) / 2;
+                int parent = (i - 1)/2;
                 if (heap[i].compareTo(heap[parent]) >= 0) break;
                 swap(heap, i, parent);
                 i = parent;
@@ -75,5 +81,24 @@ public class tryHeapsort {
             swap(arr, 0, i);
             heapify(arr, i, 0);
         }
+    }
+
+
+    public static String[] readWordsFromFile(String filename) {
+        List<String> wordsList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Split line into words, remove non-alphabetic chars
+                String[] words = line.split("\\s+");
+                for (String w : words) {
+                    String clean = w.replaceAll("[^a-zA-Z]", "").toLowerCase();
+                    if (!clean.isEmpty()) wordsList.add(clean);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return wordsList.toArray(new String[0]);
     }
 }
