@@ -28,4 +28,9 @@ public class tryHeapsort {
                     heapify(arr, smallest, j);
                 }
     }
+
+    //Build heap bottom up
+    public static void insert(String[] heap, int size) {
+
+    }
 }
