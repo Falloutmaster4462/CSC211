@@ -12,10 +12,10 @@ public class tryHeapsort {
 
      // Heapify node i in array of size n (min-heap for alphabetical order)
 
-    private static void heapify(String[] arr, int i, int j) {
+    private static void heapify(String[] arr, int i, int n) {
                 int smallest = i;
                 int left = 2*i;
-                int right = 2*j + 1;
+                int right = 2*i + 1;
 
 
                 if (left < n && arr[left].compareTo(arr[smallest]) < 0)
@@ -37,5 +37,30 @@ public class tryHeapsort {
             heapify(arr, n, i);
         }
 
+
+
     }
-}
+
+    //Top Down Heap Methods
+
+
+    //Insert the element into the heap (top down)
+    private static void insert(String[] heap, int size) {
+        int i = size - 1;
+        while ( i > 0){
+            int parent = (i - 1)/2;
+            while (i > 0) {
+                int parent = (i - 1) / 2;
+                if (heap[i].compareTo(heap[parent]) >= 0) break;
+                swap(heap, i, parent);
+                i = parent;
+            }
+        }
+        }
+    // Build heap top-down
+    public static void buildHeapTopDown(String[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            insert(arr, i + 1); // insert arr[i] into heap of size i
+        }
+    }
+    }
